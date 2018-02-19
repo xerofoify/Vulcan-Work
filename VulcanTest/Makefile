@@ -1,10 +1,9 @@
 VULCAN_SDK_PATH = /home/user/nick/VulkanSDK/1.0.65.0/x86_64
-
 CFLAGS = -std=c++11 -I$(VULKAN_SDK_PATH)/include
 LDFLAGS = -L$(VULKAN_SDK_PATH)/lib `pkg-config --static --libs glfw3` -lvulkan
 
 VulkanTest: main.cpp
-	g++ $(CFLAGS) -o VulkanTest main.cpp $(LDFLAGS)
+	g++ $(CFLAGS) -o VulkanTest main.cpp $(LDFLAGS) -DDEBUG
 
 .PHONY: test clean
 
